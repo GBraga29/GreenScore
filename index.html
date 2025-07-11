@@ -24,7 +24,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -33,18 +33,24 @@
             overflow-x: hidden;
         }
 
-        /* Variáveis CSS modernas */
+        /* Variáveis CSS modernas - Paleta Verde */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --primary-gradient: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            --secondary-gradient: linear-gradient(135deg, #55a3ff 0%, #4facfe 100%);
+            --success-gradient: linear-gradient(135deg, #00d2d3 0%, #54a0ff 100%);
+            --warning-gradient: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+            --accent-gradient: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
-            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --shadow-soft: 0 8px 32px rgba(0, 184, 148, 0.15);
+            --shadow-strong: 0 20px 40px rgba(0, 184, 148, 0.25);
             --border-radius: 20px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --green-primary: #00b894;
+            --green-secondary: #00cec9;
+            --green-light: #55efc4;
+            --green-dark: #00a085;
+            --green-accent: #48dbfb;
         }
 
         .mobile-container {
@@ -110,23 +116,31 @@
         }
 
         .subtitle {
-            color: #64748b;
+            color: var(--green-dark);
             margin-bottom: 30px;
             font-size: 1.1em;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 0.01em;
         }
 
         .icon {
             font-size: 4.5em;
             margin: 20px 0;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 4px 8px rgba(0, 184, 148, 0.2));
             animation: float 3s ease-in-out infinite;
+            color: var(--green-primary);
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
+        }
+
+        .icon i {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .btn {
@@ -173,7 +187,7 @@
         }
 
         .btn-secondary {
-            background: var(--secondary-gradient);
+            background: var(--accent-gradient);
             color: white;
         }
 
@@ -203,7 +217,7 @@
         .input-group label {
             display: block;
             margin-bottom: 8px;
-            color: #374151;
+            color: var(--green-dark);
             font-weight: 600;
             font-size: 0.95em;
             letter-spacing: 0.01em;
@@ -222,8 +236,8 @@
         }
 
         .input-group input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: var(--green-primary);
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
             background: white;
         }
 
@@ -238,13 +252,13 @@
         }
 
         .instruction h3 {
-            color: #1f2937;
+            color: var(--green-dark);
             margin-bottom: 8px;
             font-weight: 600;
         }
 
         .instruction p {
-            color: #6b7280;
+            color: #4a5568;
             line-height: 1.6;
         }
 
@@ -301,7 +315,7 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background: var(--secondary-gradient);
+            background: var(--accent-gradient);
             margin: 0 auto 15px;
             display: flex;
             align-items: center;
@@ -345,7 +359,8 @@
         .history-icon {
             font-size: 1.8em;
             margin-right: 18px;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 2px 4px rgba(0, 184, 148, 0.2));
+            color: var(--green-primary);
         }
 
         .reward-item {
@@ -416,13 +431,13 @@
         }
 
         .stat-card h4 {
-            color: #1f2937;
+            color: var(--green-dark);
             margin-bottom: 12px;
             font-weight: 600;
         }
 
         .stat-card p {
-            color: #6b7280;
+            color: #4a5568;
             margin: 8px 0;
             line-height: 1.5;
         }
@@ -522,24 +537,24 @@
             margin-bottom: 4px;
             position: relative;
             z-index: 1;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 2px 4px rgba(0, 184, 148, 0.15));
         }
 
         .nav-label {
             font-size: 0.75em;
             font-weight: 600;
-            color: #64748b;
+            color: #4a5568;
             position: relative;
             z-index: 1;
             letter-spacing: 0.01em;
         }
 
         .nav-item.active .nav-label {
-            color: #667eea;
+            color: var(--green-primary);
         }
 
         .nav-item.active .nav-icon {
-            color: #667eea;
+            color: var(--green-primary);
         }
 
         /* Ajustar padding inferior nas telas para o menu */
@@ -574,7 +589,7 @@
             <div class="logo">🌱 GreenScore</div>
             <div class="subtitle">Gamificação Ambiental</div>
             <div class="icon"><i class="fas fa-recycle"></i></div>
-            <p style="margin: 20px 0; color: #64748b; line-height: 1.6; font-weight: 400;">
+            <p style="margin: 20px 0; color: var(--green-dark); line-height: 1.6; font-weight: 400;">
                 Transforme o descarte consciente de eletrônicos em uma experiência divertida e recompensadora!
             </p>
             <button class="btn" onclick="showScreen('register')">
@@ -586,7 +601,7 @@
         <div id="register" class="screen">
             <div class="header">Cadastro</div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                <div class="icon">👤</div>
+                <div class="icon"><i class="fas fa-user-circle"></i></div>
                 <div class="input-group">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" id="nome" placeholder="Digite seu nome">
@@ -606,7 +621,7 @@
         <div id="scan" class="screen">
             <div class="header">Escaneamento</div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                <div class="icon">📱</div>
+                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
                 <div class="instruction">
                     <h3>📍 Instrução</h3>
                     <p>Aproxime-se da lixeira de eletrônicos e escaneie o QR Code para registrar sua localização.</p>
@@ -623,7 +638,7 @@
         <div id="photo" class="screen">
             <div class="header">Registro do Resíduo</div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                <div class="icon">📸</div>
+                <div class="icon"><i class="fas fa-camera"></i></div>
                 <div class="instruction">
                     <h3>📋 Instrução</h3>
                     <p>Fotografe o item eletrônico que será descartado para identificação automática.</p>
@@ -643,7 +658,7 @@
         <div id="confirm" class="screen">
             <div class="header">Descarte Confirmado</div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-                <div class="icon">✅</div>
+                <div class="icon"><i class="fas fa-check-circle"></i></div>
                 <div class="success-message">
                     <h3>🎉 Parabéns!</h3>
                     <p>Obrigado por contribuir com o meio ambiente!</p>
@@ -665,14 +680,14 @@
             <div class="header">Meu Perfil</div>
             <div style="flex: 1; overflow-y: auto;">
                 <div class="profile-header">
-                    <div class="profile-avatar">👤</div>
+                    <div class="profile-avatar"><i class="fas fa-user"></i></div>
                     <h3 id="userName">Usuário GreenScore</h3>
                     <p>Eco-Guerreiro Nível 2</p>
                 </div>
                 
                 <div class="score">🏆 1.250 Pontos</div>
                 
-                <h4 style="margin: 20px 0 10px; color: #2d5a27;">📊 Histórico de Descartes</h4>
+                <h4 style="margin: 20px 0 10px; color: var(--green-dark); font-weight: 600;">📊 Histórico de Descartes</h4>
                 
                 <div class="history-item">
                     <div class="history-icon">📱</div>
@@ -709,7 +724,7 @@
         <div id="rewards" class="screen">
             <div class="header">Recompensas</div>
             <div style="flex: 1; overflow-y: auto;">
-                <h4 style="margin: 20px 0; color: #2d5a27;">🎁 Suas Recompensas</h4>
+                <h4 style="margin: 20px 0; color: var(--green-dark); font-weight: 600;">🎁 Suas Recompensas</h4>
                 
                 <div class="reward-item">
                     <div>
@@ -754,12 +769,12 @@
         <div id="reports" class="screen">
             <div class="header">Relatórios Ambientais</div>
             <div style="flex: 1; overflow-y: auto;">
-                <h4 style="margin: 20px 0; color: #2d5a27;">🌍 Seu Impacto Ambiental</h4>
+                <h4 style="margin: 20px 0; color: var(--green-dark); font-weight: 600;">🌍 Seu Impacto Ambiental</h4>
                 
                 <div class="chart-placeholder">
-                    <div style="font-size: 3em;">📊</div>
+                    <div style="font-size: 3em; color: var(--green-primary);"><i class="fas fa-chart-line"></i></div>
                     <p><strong>Gráfico de Impacto</strong></p>
-                    <p style="font-size: 0.9em; margin-top: 10px;">CO₂ Evitado: 12,5 kg</p>
+                    <p style="font-size: 0.9em; margin-top: 10px; color: var(--green-dark);">CO₂ Evitado: 12,5 kg</p>
                 </div>
                 
                 <div class="stat-card">
