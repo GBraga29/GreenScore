@@ -71,10 +71,11 @@
             border-radius: 25px;
             font-size: 1.1em;
             cursor: pointer;
-            margin: 10px 0;
+            margin: 10px auto;
             transition: transform 0.2s, box-shadow 0.2s;
             width: 100%;
             max-width: 280px;
+            display: block;
         }
 
         .btn:hover {
@@ -85,6 +86,22 @@
         .btn-secondary {
             background: #87ceeb;
             color: #2d5a27;
+        }
+
+        /* Container para centralizar botões */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Botões pequenos (como os de recompensas) */
+        .btn-small {
+            padding: 8px 16px;
+            width: auto;
+            margin: 0;
+            font-size: 0.9em;
         }
 
         .input-group {
@@ -315,8 +332,10 @@
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" placeholder="Digite seu e-mail">
                 </div>
-                <button class="btn" onclick="showScreen('scan')">Cadastrar</button>
-                <button class="btn btn-secondary" onclick="showScreen('welcome')">Voltar</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('scan')">Cadastrar</button>
+                    <button class="btn btn-secondary" onclick="showScreen('welcome')">Voltar</button>
+                </div>
             </div>
         </div>
 
@@ -330,8 +349,10 @@
                     <p>Aproxime-se da lixeira de eletrônicos e escaneie o QR Code para registrar sua localização.</p>
                 </div>
                 <div class="icon" style="font-size: 6em;">📷</div>
-                <button class="btn" onclick="showScreen('photo')">Simular Escaneamento</button>
-                <button class="btn btn-secondary" onclick="showScreen('register')">Voltar</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('photo')">Simular Escaneamento</button>
+                    <button class="btn btn-secondary" onclick="showScreen('register')">Voltar</button>
+                </div>
             </div>
         </div>
 
@@ -348,8 +369,10 @@
                     <div style="font-size: 3em;">📱</div>
                     <p style="color: #666; margin-top: 10px;">Câmera Ativa</p>
                 </div>
-                <button class="btn" onclick="showScreen('confirm')">Tirar Foto (Simulação)</button>
-                <button class="btn btn-secondary" onclick="showScreen('scan')">Voltar</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('confirm')">Tirar Foto (Simulação)</button>
+                    <button class="btn btn-secondary" onclick="showScreen('scan')">Voltar</button>
+                </div>
             </div>
         </div>
 
@@ -367,8 +390,10 @@
                     <strong>Peso estimado:</strong> 180g<br>
                     <strong>Pontos ganhos:</strong> +50 pts
                 </div>
-                <button class="btn" onclick="showScreen('profile')">Ver Pontuação</button>
-                <button class="btn btn-secondary" onclick="showScreen('scan')">Novo Descarte</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('profile')">Ver Pontuação</button>
+                    <button class="btn btn-secondary" onclick="showScreen('scan')">Novo Descarte</button>
+                </div>
             </div>
         </div>
 
@@ -410,8 +435,10 @@
                     </div>
                 </div>
                 
-                <button class="btn" onclick="showScreen('rewards')">Ver Recompensas</button>
-                <button class="btn btn-secondary" onclick="showScreen('scan')">Novo Descarte</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('rewards')">Ver Recompensas</button>
+                    <button class="btn btn-secondary" onclick="showScreen('scan')">Novo Descarte</button>
+                </div>
             </div>
         </div>
 
@@ -426,7 +453,7 @@
                         <strong>🌱 Muda de Árvore</strong><br>
                         <small>500 pontos</small>
                     </div>
-                    <button class="btn" style="padding: 8px 16px; width: auto;">Trocar</button>
+                    <button class="btn btn-small">Trocar</button>
                 </div>
                 
                 <div class="reward-item">
@@ -434,7 +461,7 @@
                         <strong>☕ Copo Ecológico</strong><br>
                         <small>800 pontos</small>
                     </div>
-                    <button class="btn" style="padding: 8px 16px; width: auto;">Trocar</button>
+                    <button class="btn btn-small">Trocar</button>
                 </div>
                 
                 <div class="reward-item">
@@ -442,7 +469,7 @@
                         <strong>🎫 Desconto 20% Eco-Store</strong><br>
                         <small>1.000 pontos</small>
                     </div>
-                    <button class="btn" style="padding: 8px 16px; width: auto;">Trocar</button>
+                    <button class="btn btn-small">Trocar</button>
                 </div>
                 
                 <div class="reward-item">
@@ -450,11 +477,13 @@
                         <strong>🚲 Bicicleta Sustentável</strong><br>
                         <small>5.000 pontos</small>
                     </div>
-                    <button class="btn" style="padding: 8px 16px; width: auto; opacity: 0.5;">Indisponível</button>
+                    <button class="btn btn-small" style="opacity: 0.5;">Indisponível</button>
                 </div>
                 
-                <button class="btn" onclick="showScreen('reports')">Ver Relatórios</button>
-                <button class="btn btn-secondary" onclick="showScreen('profile')">Voltar</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('reports')">Ver Relatórios</button>
+                    <button class="btn btn-secondary" onclick="showScreen('profile')">Voltar</button>
+                </div>
             </div>
         </div>
 
@@ -485,8 +514,10 @@
                     <p>🌟 Eco-Guerreiro do mês</p>
                 </div>
                 
-                <button class="btn" onclick="showScreen('welcome')">Voltar ao Início</button>
-                <button class="btn btn-secondary" onclick="showScreen('rewards')">Voltar</button>
+                <div class="btn-container">
+                    <button class="btn" onclick="showScreen('welcome')">Voltar ao Início</button>
+                    <button class="btn btn-secondary" onclick="showScreen('rewards')">Voltar</button>
+                </div>
             </div>
                  </div>
          
